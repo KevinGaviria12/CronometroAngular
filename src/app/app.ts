@@ -35,7 +35,10 @@ export class App implements OnDestroy {
   reset() {
     this.stop(); // Detiene el contador
     this.time = '00:00:00:000'; 
-    this.start()
+    // Nota: no volvemos a llamar a this.start() aquí para que
+    // el botón "Reiniciar" deje el cronómetro en 00:00:00:000 y
+    // lo detenga. Si prefieres que reinicie automáticamente, descomenta:
+    // this.start();
   }
 
   ngOnDestroy() {
